@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="backalla_utils",
-    version="0.0.1",
+    version="0.0.2",
     author="Tushar Pawar",
     author_email="gmail@tusharpawar.com",
     description="Collection of frequently used utility functions",
@@ -15,7 +15,6 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     classifiers=(
         "Programming Language :: Python :: 3",
-        "License :: WTFPL",
         "Operating System :: OS Independent",
     ),
 )
