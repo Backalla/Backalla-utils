@@ -41,6 +41,19 @@ class S3_handler:
             raise AttributeError("Provided local file {} does not exist".format(local_file_path))
 
     def download_file(self,s3_file_path,local_file_path,create_download_path=False):
+        """Download file from S3
+        
+        Arguments:
+            s3_file_path {str} -- Complete path to s3 file
+            local_file_path {str} -- Destination file path on local to download the image
+        
+        Keyword Arguments:
+            create_download_path {bool} -- Create the path by making directories is not exists (default: {False})
+        
+        Raises:
+            OSError -- If path does not exists
+        """
+
         if not os.path.exists(os.path.dirname(local_file_path)):
             if create_download_path:
                 os.makedirs(os.path.dirname(local_file_path))
