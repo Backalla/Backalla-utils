@@ -19,6 +19,7 @@ class Model:
         self.writer = None
         self.saver = None
         self.name = name
+        self.graph_written = False
 
     def init(self):
         """
@@ -57,7 +58,9 @@ class Model:
 
         self.merged_summary_ops = tf.summary.merge_all()
         self.summary_writer = tf.summary.FileWriter(logdir)
-        self.summary_writer.add_graph(tf.get_default_graph())
+        # if not self.graph:
+        #     self.summary_writer.add_graph(tf.get_default_graph())
+        # self.graph_written = True
 
     def session(self):
         """
